@@ -73,8 +73,8 @@ var levels = [
 
 var level;
 
-var tankPositionsP1 = [[15,10]]; //Y; X
-var tankPositionsP2 = [[8,16]];
+var tankPositionsP1 = [[9,4]]; //Y; X
+var tankPositionsP2 = [[9,16]];
 var tankPosP1 = tankPositionsP1[0];
 var tankPosP2 = tankPositionsP1[0];
 var tankRotP1; //Rotation (-1,0 = up; 0,1 = right; 1,0 = down; 0,-1 = left)
