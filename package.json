@@ -2,5 +2,5 @@
   "name": "Little Tank War",
   "main": "srv-simple.js",
   "author": "Stefan Blamberg <stefan.blamberg@blamberg.org>",
-  "license": "Free"
+  "license": "AGPLv3"
 }
