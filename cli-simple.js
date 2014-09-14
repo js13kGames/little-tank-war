@@ -10,10 +10,12 @@ socket.on('srv-msg', function(data) {
 		{
 			case 'p':
 				player = parseInt(data[2]);
+				console.log("Player: " + player);
 			break;
 
 			case 'a':
 				document.getElementById('info').innerHTML = data.substring(2);
+				console.log("Received message from server");
 			break;
 
 			default:
@@ -32,6 +34,7 @@ socket.on('srv-msg', function(data) {
 
 function send(data) {
 	socket.emit('cli-msg', data);
+	console.log("Client: Sending data to server...");
 }
 
 function move(dir)
@@ -41,6 +44,7 @@ function move(dir)
 
 function update ()
 {
+	debug.log("Update Call");
 	var game = document.getElementById("game");
 	var ctx = game.getContext("2d");
 
@@ -85,3 +89,4 @@ function update ()
 }
 
 send('c');
+console.log("Client: Connection try...");
