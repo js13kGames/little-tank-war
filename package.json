@@ -1,6 +1,6 @@
 {
   "name": "Little Tank War",
-  "main": "srv.js",
+  "main": "srv-simple.js",
   "author": "Stefan Blamberg <stefan.blamberg@blamberg.org>",
   "license": "Free"
 }
