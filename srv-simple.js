@@ -75,8 +75,8 @@ var level;
 
 var tankPositionsP1 = [[9,4]]; //Y; X
 var tankPositionsP2 = [[9,16]];
-var tankPosP1 = tankPositionsP1[0];
-var tankPosP2 = tankPositionsP1[0];
+var tankPosP1 = [9,4];
+var tankPosP2 = [9,16];
 var tankRotP1; //Rotation (-1,0 = up; 0,1 = right; 1,0 = down; 0,-1 = left)
 var tankRotP2;
 
@@ -132,7 +132,7 @@ function receiveClientMessage(data) {
 			});
 		break;
 
-		case 'a':
+		default:
 			this.emit('srv-msg', {
 			  data: data,
 			  msg: data;
@@ -248,14 +248,14 @@ function shoot(p)
 	  }
 	  else if(level[bullet[0]][bullet[1]] == 3) 
 	  {
-	    receiveClientMessage('a1You lost!');
-	    receiveClientMessage('a2You won!');
+	    receiveClientMessage('1aYou lost!');
+	    receiveClientMessage('2aYou won!');
 	    return;
 	  }
 	  else if(level[bullet[0]][bullet[1]] == 4) 
 	  {
-	    receiveClientMessage('a2You lost');
-	    receiveClientMessage('a1You won!');
+	    receiveClientMessage('2aYou lost');
+	    receiveClientMessage('1aYou won!');
 	    return;
 	  }
 	}
@@ -264,5 +264,6 @@ function shoot(p)
 
 function update()
 {
-	receiveClientMessage('u');
+	socket.emit('cli-msg', 'u');
+	debug.log("Server: Update call");
 }
